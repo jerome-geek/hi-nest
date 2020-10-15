@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
-import { MoviesController } from './movies/movies.controller';
-import { MoviesService } from './movies/movies.service';
+import { MoviesModule } from './movies/movies.module';
+import { AppController } from './app.controller';
 
 // Decorator: Add Functionality to Class
 @Module({
-    imports: [],
+    imports: [MoviesModule],
     // Controller takes URL and maps them into function
-    controllers: [MoviesController],
-    providers: [MoviesService],
+    controllers: [AppController],
+    providers: [],
 })
 export class AppModule {}
